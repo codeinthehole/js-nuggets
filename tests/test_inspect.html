@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Unit tests for inspect.js</title>
+        <script language="javascript" src="../utils/jsunit/app/jsUnitCore.js"></script>
+        <script language="javascript" src="../scripts/inspect.js"></script>
+    </head>
+    <body>
+        <script language="javascript">
+            var testObj;
+            function setUp() {
+                testObj = {
+                    prop1: 1,
+                    get: function(){},
+                    set: function(){}
+                }
+            }
+            function testInspectMethods() {
+                assertTrue('Testing get method is returned', -1 != Inspect.methods(testObj).indexOf('get'));
+                assertTrue('Testing set method is returned', -1 != Inspect.methods(testObj).indexOf('set'));
+                assertTrue('Testing no other methods are returned', 2 == Inspect.methods(testObj).length);
+            }
+            function testInspectProperties() {
+                assertTrue('Testing prop1 property is returned', -1 != Inspect.properties(testObj).indexOf('prop1'));
+                assertTrue('Testing no other properties are returned', 1 == Inspect.properties(testObj).length);
+            }
+        </script>
+    </body>
+</html>
