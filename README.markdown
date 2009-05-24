@@ -3,6 +3,10 @@ Javascript nuggets
 
 Just a simple collection javascript utilities.
 
+Scripts
+-------
+* *scripts/inspect.js*  - a simple object inspection utility.
+
 Unit tests
 ----------
 Each test has a corresponding unit test suite (written using the [http://www.jsunit.net/](jsunit) framework).
